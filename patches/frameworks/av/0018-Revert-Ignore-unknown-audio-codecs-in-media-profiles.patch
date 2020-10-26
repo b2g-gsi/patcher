@@ -1,4 +1,4 @@
-From 71ec4cb2071eb819b814f7f7c6a6869a89e7e91e Mon Sep 17 00:00:00 2001
+From f809e7b09894f32c8b497bee9bb24b2755f9cfbd Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 29 Apr 2020 00:17:01 +0200
 Subject: [PATCH 18/24] Revert "Ignore unknown audio codecs in media profiles'
@@ -10,7 +10,7 @@ This reverts commit ee00227dc5ddfc88b13fa37ba96f846950c03b4e.
  1 file changed, 1 insertion(+), 4 deletions(-)
 
 diff --git a/media/libmedia/MediaProfiles.cpp b/media/libmedia/MediaProfiles.cpp
-index 08d0199a07..98c54971ad 100644
+index 08d0199..98c5497 100644
 --- a/media/libmedia/MediaProfiles.cpp
 +++ b/media/libmedia/MediaProfiles.cpp
 @@ -300,7 +300,6 @@ MediaProfiles::createAudioEncoderCap(const char **atts)

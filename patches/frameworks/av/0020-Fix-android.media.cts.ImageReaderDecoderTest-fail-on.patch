@@ -1,4 +1,4 @@
-From 8a1f19075ce93a1cd6d9afadf7ffceac20379558 Mon Sep 17 00:00:00 2001
+From 0347851b72e0fb16fdb49b6804451f51f4abef59 Mon Sep 17 00:00:00 2001
 From: Marcus Huang <marcus.huang@mediatek.com>
 Date: Fri, 18 Oct 2019 15:51:35 +0800
 Subject: [PATCH 20/24] Fix android.media.cts.ImageReaderDecoderTest fail on
@@ -29,10 +29,10 @@ Change-Id: I6eaff1b858e031b64744bc67d8aee5cc51cfd92d
  4 files changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/media/codec2/components/avc/C2SoftAvcDec.cpp b/media/codec2/components/avc/C2SoftAvcDec.cpp
-index fa98178187..75a612276d 100644
+index 3f015b4..411732a 100644
 --- a/media/codec2/components/avc/C2SoftAvcDec.cpp
 +++ b/media/codec2/components/avc/C2SoftAvcDec.cpp
-@@ -755,8 +755,8 @@ c2_status_t C2SoftAvcDec::ensureDecoderState(const std::shared_ptr<C2BlockPool>
+@@ -752,8 +752,8 @@ c2_status_t C2SoftAvcDec::ensureDecoderState(const std::shared_ptr<C2BlockPool>
          ALOGE("not supposed to be here, invalid decoder context");
          return C2_CORRUPTED;
      }
@@ -44,7 +44,7 @@ index fa98178187..75a612276d 100644
      }
      if (mOutBlock &&
 diff --git a/media/codec2/components/avc/C2SoftAvcDec.h b/media/codec2/components/avc/C2SoftAvcDec.h
-index 4414a26c96..ed27493f32 100644
+index 72ee583..f600fbb 100644
 --- a/media/codec2/components/avc/C2SoftAvcDec.h
 +++ b/media/codec2/components/avc/C2SoftAvcDec.h
 @@ -40,6 +40,7 @@ namespace android {
@@ -56,10 +56,10 @@ index 4414a26c96..ed27493f32 100644
  #define IVDEXT_CMD_CTL_SET_NUM_CORES    \
          (IVD_CONTROL_API_COMMAND_TYPE_T)IH264D_CMD_CTL_SET_NUM_CORES
 diff --git a/media/codec2/components/hevc/C2SoftHevcDec.cpp b/media/codec2/components/hevc/C2SoftHevcDec.cpp
-index df677c284e..389ea610dc 100644
+index 7232572..e99a4a1 100644
 --- a/media/codec2/components/hevc/C2SoftHevcDec.cpp
 +++ b/media/codec2/components/hevc/C2SoftHevcDec.cpp
-@@ -752,8 +752,8 @@ c2_status_t C2SoftHevcDec::ensureDecoderState(const std::shared_ptr<C2BlockPool>
+@@ -748,8 +748,8 @@ c2_status_t C2SoftHevcDec::ensureDecoderState(const std::shared_ptr<C2BlockPool>
          ALOGE("not supposed to be here, invalid decoder context");
          return C2_CORRUPTED;
      }
@@ -71,7 +71,7 @@ index df677c284e..389ea610dc 100644
      }
      if (mOutBlock &&
 diff --git a/media/codec2/components/hevc/C2SoftHevcDec.h b/media/codec2/components/hevc/C2SoftHevcDec.h
-index ce63a6c4c3..aecd1011de 100644
+index b7664e6..19d0fc0 100644
 --- a/media/codec2/components/hevc/C2SoftHevcDec.h
 +++ b/media/codec2/components/hevc/C2SoftHevcDec.h
 @@ -38,6 +38,7 @@ namespace android {

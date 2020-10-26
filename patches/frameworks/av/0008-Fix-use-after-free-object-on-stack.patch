@@ -1,4 +1,4 @@
-From 806f3792280e0e2f45f023c386765d0bc2820657 Mon Sep 17 00:00:00 2001
+From fc4c17c9fcfb765f4ab3e42234f411d0bbc2d1cc Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 5 Aug 2019 17:27:47 +0200
 Subject: [PATCH 08/24] Fix use-after-free (object on stack)
@@ -9,7 +9,7 @@ Change-Id: I9ae666b10873eac4e7a55032071e7b15b0de058a
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
-index c8cb54b5f4..9f2bdc4b36 100644
+index c8cb54b..9f2bdc4 100644
 --- a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 +++ b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 @@ -517,7 +517,7 @@ Return<DevicePortTraits::Element> DevicePortTraits::deserialize(const xmlNode *c

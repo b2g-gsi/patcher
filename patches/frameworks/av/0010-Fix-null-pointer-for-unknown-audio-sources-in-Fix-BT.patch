@@ -1,4 +1,4 @@
-From 4c3f5d0fa1582d3f8547d81c4e58e99038e04f56 Mon Sep 17 00:00:00 2001
+From 377f935a79c53231317db520bfa1cd9ca1c94dac Mon Sep 17 00:00:00 2001
 From: Vincent Vidal <vincent.vidal@onera.fr>
 Date: Thu, 12 Sep 2019 14:17:14 +0200
 Subject: [PATCH 10/24] Fix null pointer for unknown audio sources in "Fix BT
@@ -10,7 +10,7 @@ Some audio sources may not exist on some devices (e.g. Axon 7), leading to a seg
  1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
-index 9c7e5c49db..8bfdb5b0a0 100644
+index 9c7e5c4..8bfdb5b 100644
 --- a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 +++ b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 @@ -685,8 +685,10 @@ static void fixupQualcommBtScoRoute(RouteTraits::Collection& routes, DevicePortT

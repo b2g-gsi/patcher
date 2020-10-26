@@ -1,4 +1,4 @@
-From 74704affac464858eb42ba32e6ad45df3e4dfe70 Mon Sep 17 00:00:00 2001
+From fb55bdc1d9fc34bf3919c228512c9153dd462cfe Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 14 May 2020 19:54:55 +0200
 Subject: [PATCH 22/24] Add persist.sys.phh.samsung.camera_ids property to
@@ -10,7 +10,7 @@ Subject: [PATCH 22/24] Add persist.sys.phh.samsung.camera_ids property to
  2 files changed, 12 insertions(+), 2 deletions(-)
 
 diff --git a/services/camera/libcameraservice/Android.bp b/services/camera/libcameraservice/Android.bp
-index 1c1f5e6e45..6672163fca 100644
+index 1c1f5e6..6672163 100644
 --- a/services/camera/libcameraservice/Android.bp
 +++ b/services/camera/libcameraservice/Android.bp
 @@ -107,6 +107,7 @@ cc_library_shared {
@@ -22,7 +22,7 @@ index 1c1f5e6e45..6672163fca 100644
  
      export_shared_lib_headers: [
 diff --git a/services/camera/libcameraservice/common/CameraProviderManager.cpp b/services/camera/libcameraservice/common/CameraProviderManager.cpp
-index fdb5657500..9c1c70c846 100644
+index 09638d0..bbcfc55 100644
 --- a/services/camera/libcameraservice/common/CameraProviderManager.cpp
 +++ b/services/camera/libcameraservice/common/CameraProviderManager.cpp
 @@ -21,6 +21,7 @@
@@ -33,7 +33,7 @@ index fdb5657500..9c1c70c846 100644
  
  #include <algorithm>
  #include <chrono>
-@@ -1225,6 +1226,9 @@ status_t CameraProviderManager::ProviderInfo::initialize(
+@@ -1189,6 +1190,9 @@ status_t CameraProviderManager::ProviderInfo::initialize(
          mMinorVersion = 4;
      }
  
@@ -43,7 +43,7 @@ index fdb5657500..9c1c70c846 100644
      // cameraDeviceStatusChange callbacks may be called (and causing new devices added)
      // before setCallback returns
      hardware::Return<Status> status = interface->setCallback(this);
-@@ -1269,7 +1273,7 @@ status_t CameraProviderManager::ProviderInfo::initialize(
+@@ -1233,7 +1237,7 @@ status_t CameraProviderManager::ProviderInfo::initialize(
  
      // Get initial list of camera devices, if any
      std::vector<std::string> devices;
@@ -52,7 +52,7 @@ index fdb5657500..9c1c70c846 100644
              Status idStatus,
              const hardware::hidl_vec<hardware::hidl_string>& cameraDeviceNames) {
          status = idStatus;
-@@ -1286,7 +1290,12 @@ status_t CameraProviderManager::ProviderInfo::initialize(
+@@ -1250,7 +1254,12 @@ status_t CameraProviderManager::ProviderInfo::initialize(
                      mProviderPublicCameraIds.push_back(id);
                  }
              }
