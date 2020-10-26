@@ -1,4 +1,4 @@
-From 302182d715b188fc314392e42de97b4ba44d7b33 Mon Sep 17 00:00:00 2001
+From 2c051d167e6829e2ec6fdf0461434b2d990b091c Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 12 Apr 2020 16:11:09 +0200
 Subject: [PATCH 14/24] Ignore unknown audio codecs in media profiles'
@@ -9,7 +9,7 @@ Subject: [PATCH 14/24] Ignore unknown audio codecs in media profiles'
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/media/libmedia/MediaProfiles.cpp b/media/libmedia/MediaProfiles.cpp
-index 98c54971ad..08d0199a07 100644
+index 98c5497..08d0199 100644
 --- a/media/libmedia/MediaProfiles.cpp
 +++ b/media/libmedia/MediaProfiles.cpp
 @@ -300,6 +300,7 @@ MediaProfiles::createAudioEncoderCap(const char **atts)

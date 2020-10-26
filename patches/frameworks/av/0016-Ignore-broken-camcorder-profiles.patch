@@ -1,4 +1,4 @@
-From 962fa48649683a71781793513906104f3e3ca6ca Mon Sep 17 00:00:00 2001
+From b23e6ec08dcaeef41420b72a2f32cf0e40b46383 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Fri, 17 Apr 2020 23:15:08 +0200
 Subject: [PATCH 16/24] Ignore broken camcorder profiles
@@ -8,7 +8,7 @@ Subject: [PATCH 16/24] Ignore broken camcorder profiles
  1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/media/libmedia/MediaProfiles.cpp b/media/libmedia/MediaProfiles.cpp
-index 08d0199a07..0944c973db 100644
+index 08d0199..0944c97 100644
 --- a/media/libmedia/MediaProfiles.cpp
 +++ b/media/libmedia/MediaProfiles.cpp
 @@ -341,10 +341,12 @@ MediaProfiles::createCamcorderProfile(int cameraId, const char **atts, Vector<in

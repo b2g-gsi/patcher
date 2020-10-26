@@ -1,4 +1,4 @@
-From 809f660700e5b53983d7e9a13700db0cf7b5dccc Mon Sep 17 00:00:00 2001
+From e1cedc3180bfc7246a25baf604d26bc5468049a6 Mon Sep 17 00:00:00 2001
 From: Alex Zhang <difan@google.com>
 Date: Fri, 17 Apr 2020 16:08:24 -0700
 Subject: [PATCH 19/24] Allow graceful degradation of MediaProfile with broken
@@ -19,7 +19,7 @@ Change-Id: Icc0f85fe0aac748be4d4f7dd94814f615d528a03
  1 file changed, 28 insertions(+), 14 deletions(-)
 
 diff --git a/media/libmedia/MediaProfiles.cpp b/media/libmedia/MediaProfiles.cpp
-index 98c54971ad..366d90de9e 100644
+index 98c5497..366d90d 100644
 --- a/media/libmedia/MediaProfiles.cpp
 +++ b/media/libmedia/MediaProfiles.cpp
 @@ -194,7 +194,7 @@ MediaProfiles::createVideoCodec(const char **atts, MediaProfiles *profiles)

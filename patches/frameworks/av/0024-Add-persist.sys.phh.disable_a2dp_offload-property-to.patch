@@ -1,4 +1,4 @@
-From e525052c29f65a27ccc13396e62f113fcba6dc16 Mon Sep 17 00:00:00 2001
+From 2e5cc2e51edf5d0358fdc63c4f8c828dc01aff31 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 25 May 2020 21:26:54 +0200
 Subject: [PATCH 24/24] Add persist.sys.phh.disable_a2dp_offload property to
@@ -11,7 +11,7 @@ Subject: [PATCH 24/24] Add persist.sys.phh.disable_a2dp_offload property to
  3 files changed, 197 insertions(+), 6 deletions(-)
 
 diff --git a/media/libstagefright/ACodec.cpp b/media/libstagefright/ACodec.cpp
-index 0271ecef34..7824b590a6 100644
+index 007b84c..d7bf288 100644
 --- a/media/libstagefright/ACodec.cpp
 +++ b/media/libstagefright/ACodec.cpp
 @@ -1166,6 +1166,9 @@ status_t ACodec::configureOutputBuffersFromNativeWindow(
@@ -60,7 +60,7 @@ index 0271ecef34..7824b590a6 100644
          }
      }
 diff --git a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
-index 4bdb082ba1..d144f8991d 100644
+index 4bdb082..d144f89 100644
 --- a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 +++ b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 @@ -29,6 +29,7 @@
@@ -300,7 +300,7 @@ index 4bdb082ba1..d144f8991d 100644
  }
  
 diff --git a/services/audiopolicy/managerdefault/AudioPolicyManager.cpp b/services/audiopolicy/managerdefault/AudioPolicyManager.cpp
-index a984b10c03..5b7750b437 100644
+index 1d4dacd..e0a6b87 100644
 --- a/services/audiopolicy/managerdefault/AudioPolicyManager.cpp
 +++ b/services/audiopolicy/managerdefault/AudioPolicyManager.cpp
 @@ -76,6 +76,8 @@ static const std::vector<audio_channel_mask_t> surroundChannelMasksOrder = {{

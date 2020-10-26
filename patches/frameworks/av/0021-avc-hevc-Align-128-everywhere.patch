@@ -1,4 +1,4 @@
-From 3748f667723746bfa79321afd95fec95cd690400 Mon Sep 17 00:00:00 2001
+From c83da86cb3efa5878e8f4a32c4bf6a00654ebd1c Mon Sep 17 00:00:00 2001
 From: Wonsik Kim <wonsik@google.com>
 Date: Fri, 10 Jan 2020 09:59:42 -0800
 Subject: [PATCH 21/24] avc/hevc: Align 128 everywhere
@@ -13,10 +13,10 @@ Change-Id: Icef9b6b19d11bbf1ce0a2078113bfcc0a9cdc3ad
  2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/media/codec2/components/avc/C2SoftAvcDec.cpp b/media/codec2/components/avc/C2SoftAvcDec.cpp
-index 75a612276d..2be51dd49e 100644
+index 411732a..899b0f8 100644
 --- a/media/codec2/components/avc/C2SoftAvcDec.cpp
 +++ b/media/codec2/components/avc/C2SoftAvcDec.cpp
-@@ -500,7 +500,7 @@ void C2SoftAvcDec::getVersion() {
+@@ -497,7 +497,7 @@ void C2SoftAvcDec::getVersion() {
  status_t C2SoftAvcDec::initDecoder() {
      if (OK != createDecoder()) return UNKNOWN_ERROR;
      mNumCores = MIN(getCpuCoreCount(), MAX_NUM_CORES);
@@ -25,7 +25,7 @@ index 75a612276d..2be51dd49e 100644
      mSignalledError = false;
      resetPlugin();
      (void) setNumCores();
-@@ -908,7 +908,7 @@ void C2SoftAvcDec::process(
+@@ -885,7 +885,7 @@ void C2SoftAvcDec::process(
          if (0 < s_decode_op.u4_pic_wd && 0 < s_decode_op.u4_pic_ht) {
              if (mHeaderDecoded == false) {
                  mHeaderDecoded = true;
@@ -35,10 +35,10 @@ index 75a612276d..2be51dd49e 100644
              if (s_decode_op.u4_pic_wd != mWidth || s_decode_op.u4_pic_ht != mHeight) {
                  mWidth = s_decode_op.u4_pic_wd;
 diff --git a/media/codec2/components/hevc/C2SoftHevcDec.cpp b/media/codec2/components/hevc/C2SoftHevcDec.cpp
-index 389ea610dc..6db4387272 100644
+index e99a4a1..9afa66b 100644
 --- a/media/codec2/components/hevc/C2SoftHevcDec.cpp
 +++ b/media/codec2/components/hevc/C2SoftHevcDec.cpp
-@@ -497,7 +497,7 @@ status_t C2SoftHevcDec::getVersion() {
+@@ -493,7 +493,7 @@ status_t C2SoftHevcDec::getVersion() {
  status_t C2SoftHevcDec::initDecoder() {
      if (OK != createDecoder()) return UNKNOWN_ERROR;
      mNumCores = MIN(getCpuCoreCount(), MAX_NUM_CORES);
@@ -47,7 +47,7 @@ index 389ea610dc..6db4387272 100644
      mSignalledError = false;
      resetPlugin();
      (void) setNumCores();
-@@ -904,7 +904,7 @@ void C2SoftHevcDec::process(
+@@ -880,7 +880,7 @@ void C2SoftHevcDec::process(
          if (0 < s_decode_op.u4_pic_wd && 0 < s_decode_op.u4_pic_ht) {
              if (mHeaderDecoded == false) {
                  mHeaderDecoded = true;
