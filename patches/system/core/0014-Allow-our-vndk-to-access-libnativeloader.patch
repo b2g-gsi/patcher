@@ -1,0 +1,25 @@
+From ccfc85fa068a0d97f953dda03c92603ccb7e5788 Mon Sep 17 00:00:00 2001
+From: ittat <ittat@live.com>
+Date: Sun, 25 Oct 2020 07:37:44 +0800
+Subject: [PATCH 14/14] Allow our vndk to access libnativeloader
+
+---
+ rootdir/etc/ld.config.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/rootdir/etc/ld.config.txt b/rootdir/etc/ld.config.txt
+index f169198..f304c1b 100644
+--- a/rootdir/etc/ld.config.txt
++++ b/rootdir/etc/ld.config.txt
+@@ -484,6 +484,8 @@ namespace.vndk.link.system.shared_libs += %SANITIZER_RUNTIME_LIBRARIES%
+ 
+ namespace.vndk.link.default.allow_all_shared_libs = true
+ 
++namespace.vndk.link.runtime.shared_libs += libnativeloader.so
++
+ namespace.vndk.link.vndk_in_system.shared_libs = %VNDK_USING_CORE_VARIANT_LIBRARIES%
+ 
+ ###############################################################################
+-- 
+2.17.1
+
