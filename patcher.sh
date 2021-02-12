@@ -16,6 +16,7 @@ REPOSITORIES=(
     'system/bt'
     'system/bpf'
     'system/netd'
+    'system/sepolicy'
 
 )
 
